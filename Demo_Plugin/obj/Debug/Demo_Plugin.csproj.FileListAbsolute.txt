@@ -8,3 +8,17 @@ C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csproj.G
 C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csproj.CoreCompileInputs.cache
 C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.exe
 C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.pdb
+C:\Test\Demo-Plugin\Demo_Plugin\bin\Debug\Demo_Plugin.exe.config
+C:\Test\Demo-Plugin\Demo_Plugin\bin\Debug\Demo_Plugin.exe
+C:\Test\Demo-Plugin\Demo_Plugin\bin\Debug\Demo_Plugin.pdb
+C:\Test\Demo-Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csproj.AssemblyReference.cache
+C:\Test\Demo-Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csproj.SuggestedBindingRedirects.cache
+C:\Test\Demo-Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.Form1.resources
+C:\Test\Demo-Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.Properties.Resources.resources
+C:\Test\Demo-Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csproj.GenerateResource.cache
+C:\Test\Demo-Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csproj.CoreCompileInputs.cache
+C:\Test\Demo-Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.exe
+C:\Test\Demo-Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.pdb
+C:\Test\Demo-Plugin\Demo_Plugin\bin\Debug\Newtonsoft.Json.dll
+C:\Test\Demo-Plugin\Demo_Plugin\bin\Debug\Newtonsoft.Json.xml
+C:\Test\Demo-Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csproj.CopyComplete

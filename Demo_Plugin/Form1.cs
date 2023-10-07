@@ -13,12 +13,16 @@ using System.Threading;
 using System.Data.SqlClient;
 using System.IO.Ports;
 using System.Globalization;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace Demo_Plugin
 {
     public partial class Form1 : Form
     {
-        string strCon = @"Data Source=NHATTAN;Initial Catalog=databaseMark;Integrated Security=True";
+        //server=MUNESH-PC;database=windowapp;UID=sa;password=123
+        string strCon = @"Data Source=localhost;Initial Catalog=databaseMark;UID=sa;password=Contraseña12345678";
         string globalName, globalSize, globalNumber, globalNumber1, globalOd, globalCode, globalCount;
         SqlConnection sqlCon = null;
         public Form1()
@@ -454,6 +458,62 @@ namespace Demo_Plugin
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private async void button3_Click(object sender, EventArgs e)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var requestData = new { processDate = DateTime.UtcNow.ToString("dd/MM/yyyy") };
+                var request = new HttpRequestMessage();
+                var data = JsonConvert.SerializeObject(requestData);
+                var content = new System.Net.Http.StringContent(data);
+                content.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
+                request.Content = content;
+                request.Method = new System.Net.Http.HttpMethod("POST");
+                var urlBuilder = new StringBuilder("http://alpdev.anlapphat.com:8002/zalp_get_pr_ord?sap-client=300");
+                var url = urlBuilder.ToString();
+                request.RequestUri = new System.Uri(url, System.UriKind.RelativeOrAbsolute);
+
+                request.Headers.Authorization = new AuthenticationHeaderValue("Basic", "QUxQLklUMDM6MTIzNDU2Nzg=");
+                var response = await client.SendAsync(request, System.Net.Http.HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
+                var responseBody = await response.Content.ReadAsStringAsync();
+
+                var orderProviders = JsonConvert.DeserializeObject<List<OrderProvider>>(responseBody);
+                var orderGroups = orderProviders.GroupBy(x => x.MATERIAL).ToList();
+
+                string deleteQuery = "DELETE FROM tableMark";
+                SqlCommand sqlCommandDelete = new SqlCommand(deleteQuery, sqlCon);
+                sqlCon.Open();
+                sqlCommandDelete.ExecuteNonQuery();
+
+                string insertQuery = "INSERT INTO tableMark ([Ten Hang], [Kich Thuoc], [so luong cay], [so luong bo], [OD]) " +
+                                        "VALUES (@TenHang, @KichThuoc, @SoLuongCay, @SoLuongBo, @OD)";
+
+                foreach (var orderGroup in orderGroups)
+                {
+                    var orderProvider = orderGroup.FirstOrDefault();
+                    SqlCommand insertCommand = new SqlCommand(insertQuery, sqlCon);
+                    insertCommand.Parameters.AddWithValue("@TenHang", orderProvider.MATERIAL);
+                    insertCommand.Parameters.AddWithValue("@KichThuoc", orderProvider.SIZE);
+                    insertCommand.Parameters.AddWithValue("@SoLuongCay", orderProvider.QUANTITY_CAY);
+                    insertCommand.Parameters.AddWithValue("@SoLuongBo", orderProvider.QUANTIY_BO);
+                    insertCommand.Parameters.AddWithValue("@OD", orderProvider.PRODUCTION_ORDER);
+
+                    insertCommand.ExecuteNonQuery();
+                }
+                sqlCon.Close();
+            }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)

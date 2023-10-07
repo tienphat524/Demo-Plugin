@@ -22,7 +22,7 @@ namespace Demo_Plugin
     public partial class Form1 : Form
     {
         //server=MUNESH-PC;database=windowapp;UID=sa;password=123
-        string strCon = @"Data Source=localhost;Initial Catalog=databaseMark;UID=sa;password=Contraseña12345678";
+        string strCon = @"Data Source=NHATTAN;Initial Catalog=databaseMark;Integrated Security=True";
         string globalName, globalSize, globalNumber, globalNumber1, globalOd, globalCode, globalCount;
         SqlConnection sqlCon = null;
         public Form1()
@@ -274,8 +274,8 @@ namespace Demo_Plugin
             //SqlCommand sqlCmd = new SqlCommand();
             //sqlCmd.CommandType = CommandType.Text;
             //sqlCmd.CommandText = "select * from tableHistory";
-
             //sqlCmd.Connection = sqlCon;
+
             string query = "insert into MarkHistory Values(N'" + globalOd + "', getdate(), "+globalCount+")";
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlCon);
@@ -360,7 +360,6 @@ namespace Demo_Plugin
                     string asciiText = "<LPhat_R0><DCLEAR>" + "<DNEW,TEXT," + textBox7.Text + ">" + "<D" + textBox7.Text + "," + textBox12.Text + ">" + "<DSPEED,4000><DPOWER,30><DFREQ,150><DMARK_MODE,2><DMARK_START_DIST_DELAY,15>" + "<D" + textBox7.Text + ",HEIGHT,3.0>" + "<D" + textBox7.Text + ",WIDTH,40.0>" + "<D" + textBox7.Text + ",X,0.0>" + "<D" + textBox7.Text + ",Y,0.0>";
                     byte[] myByes = System.Text.Encoding.ASCII.GetBytes(asciiText);
                     serialPort1.Write(myByes, 0, myByes.Length);
-
                 }
                 else
                 {
@@ -506,15 +505,6 @@ namespace Demo_Plugin
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {

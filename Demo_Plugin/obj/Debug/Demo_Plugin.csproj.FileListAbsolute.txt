@@ -1,0 +1,10 @@
+C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\bin\Debug\Demo_Plugin.exe.config
+C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\bin\Debug\Demo_Plugin.exe
+C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\bin\Debug\Demo_Plugin.pdb
+C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csprojAssemblyReference.cache
+C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.Form1.resources
+C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.Properties.Resources.resources
+C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csproj.GenerateResource.cache
+C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.csproj.CoreCompileInputs.cache
+C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.exe
+C:\Users\TienPhat\Desktop\Demo_Plugin\Demo_Plugin\obj\Debug\Demo_Plugin.pdb

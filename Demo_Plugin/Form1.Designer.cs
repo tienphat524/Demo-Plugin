@@ -66,7 +66,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.btneStop = new System.Windows.Forms.Button();
@@ -83,9 +82,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnthread = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -177,6 +179,8 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -219,7 +223,7 @@
             // 
             // number2
             // 
-            this.number2.HeaderText = "Số lượng khắc";
+            this.number2.HeaderText = "Số lượng";
             this.number2.Name = "number2";
             // 
             // tabPage6
@@ -346,13 +350,14 @@
             this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(182, 394);
+            this.button5.Location = new System.Drawing.Point(21, 393);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(104, 39);
             this.button5.TabIndex = 46;
             this.button5.Text = "Refresh";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button2
@@ -363,7 +368,7 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(70, 394);
+            this.button2.Location = new System.Drawing.Point(157, 393);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 40);
             this.button2.TabIndex = 45;
@@ -380,7 +385,7 @@
             this.btnDeldata.ForeColor = System.Drawing.Color.Black;
             this.btnDeldata.Image = ((System.Drawing.Image)(resources.GetObject("btnDeldata.Image")));
             this.btnDeldata.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeldata.Location = new System.Drawing.Point(435, 393);
+            this.btnDeldata.Location = new System.Drawing.Point(389, 394);
             this.btnDeldata.Name = "btnDeldata";
             this.btnDeldata.Size = new System.Drawing.Size(76, 39);
             this.btnDeldata.TabIndex = 44;
@@ -397,7 +402,7 @@
             this.btnChoose.ForeColor = System.Drawing.Color.Black;
             this.btnChoose.Image = ((System.Drawing.Image)(resources.GetObject("btnChoose.Image")));
             this.btnChoose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChoose.Location = new System.Drawing.Point(306, 393);
+            this.btnChoose.Location = new System.Drawing.Point(262, 393);
             this.btnChoose.Name = "btnChoose";
             this.btnChoose.Size = new System.Drawing.Size(112, 40);
             this.btnChoose.TabIndex = 43;
@@ -485,7 +490,6 @@
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.btneStop);
@@ -521,7 +525,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(554, 86);
+            this.label1.Location = new System.Drawing.Point(545, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 14);
             this.label1.TabIndex = 50;
@@ -530,7 +534,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(534, 141);
+            this.button3.Location = new System.Drawing.Point(534, 153);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 49;
@@ -539,39 +543,26 @@
             this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(536, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Blue;
-            this.label26.Location = new System.Drawing.Point(544, 239);
+            this.label26.Location = new System.Drawing.Point(196, 230);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(21, 22);
+            this.label26.Size = new System.Drawing.Size(30, 32);
             this.label26.TabIndex = 47;
             this.label26.Text = "0";
-            this.label26.Visible = false;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(455, 240);
+            this.label25.Location = new System.Drawing.Point(50, 239);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(83, 22);
+            this.label25.Size = new System.Drawing.Size(140, 22);
             this.label25.TabIndex = 46;
-            this.label25.Text = "COUNT:";
-            this.label25.Visible = false;
+            this.label25.Text = "SỐ LẦN KHẮC";
             // 
             // btneStop
             // 
@@ -581,7 +572,7 @@
             this.btneStop.ForeColor = System.Drawing.Color.Black;
             this.btneStop.Image = ((System.Drawing.Image)(resources.GetObject("btneStop.Image")));
             this.btneStop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btneStop.Location = new System.Drawing.Point(338, 226);
+            this.btneStop.Location = new System.Drawing.Point(411, 225);
             this.btneStop.Name = "btneStop";
             this.btneStop.Size = new System.Drawing.Size(94, 48);
             this.btneStop.TabIndex = 45;
@@ -598,7 +589,7 @@
             this.btnStart.ForeColor = System.Drawing.Color.Black;
             this.btnStart.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.Image")));
             this.btnStart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStart.Location = new System.Drawing.Point(205, 227);
+            this.btnStart.Location = new System.Drawing.Point(266, 226);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(105, 48);
             this.btnStart.TabIndex = 44;
@@ -714,9 +705,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.btnthread);
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.textBox10);
             this.panel2.Controls.Add(this.label24);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label18);
@@ -738,6 +732,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(523, 278);
             this.panel2.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Blue;
+            this.label2.Location = new System.Drawing.Point(439, 191);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 22);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "0";
+            // 
+            // btnthread
+            // 
+            this.btnthread.Location = new System.Drawing.Point(323, 141);
+            this.btnthread.Name = "btnthread";
+            this.btnthread.Size = new System.Drawing.Size(79, 35);
+            this.btnthread.TabIndex = 50;
+            this.btnthread.Text = "Thread";
+            this.btnthread.UseVisualStyleBackColor = true;
+            this.btnthread.Visible = false;
+            this.btnthread.Click += new System.EventHandler(this.btnthread_Click);
             // 
             // label23
             // 
@@ -768,6 +784,18 @@
             this.label24.Size = new System.Drawing.Size(42, 22);
             this.label24.TabIndex = 22;
             this.label24.Text = "mm";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(421, 141);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 35);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "Nhấn";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.button1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button1_MouseUp);
             // 
             // label20
             // 
@@ -936,7 +964,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -985,11 +1012,6 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn no1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn infor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn day;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hour;
-        private System.Windows.Forms.DataGridViewTextBoxColumn number2;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label13;
@@ -1031,6 +1053,13 @@
         private System.Windows.Forms.Button btnDis;
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnthread;
+        private System.Windows.Forms.DataGridViewTextBoxColumn no1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn infor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number2;
+        private System.Windows.Forms.Label label2;
     }
 }
 
